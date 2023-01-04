@@ -25,15 +25,26 @@
           class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
         >
           {#each data.datas[genre][advancedGenre] as image, i}
-            <div class="card !static bg-base-100 shadow-xl image-full">
+            <div class="card bg-base-100 shadow-xl image-full">
               <figure>
-                <img src={image.imageurl} alt="number {i + 1} in this genre" />
+                <img
+                  src={image.imageurl}
+                  alt="number {i + 1} in this genre"
+                  class="blur-md"
+                />
               </figure>
-              <div class="card-body !static">
+              <div class="card-body">
                 <h2 class="card-title">{image.title}</h2>
                 <p>{image.desc}</p>
                 <div class="card-actions justify-end">
-                  <button class="btn btn-primary"> 保存 (テスト中) </button>
+                  <a
+                    href={image.imageurl}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="btn btn-primary"
+                  >
+                    拡大
+                  </a>
                 </div>
               </div>
             </div>

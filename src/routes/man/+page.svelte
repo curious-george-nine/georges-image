@@ -16,13 +16,13 @@
   </div>
 {:then data}
   <div class="text-left mt-12">
-    <p class="text-2xl">画像リスト 女性</p>
-    {#each Object.keys(data.datas["女性"]) as genreInWoman}
+    <p class="text-2xl">画像リスト 男性</p>
+    {#each Object.keys(data.datas["男性"]) as genreInWoman}
       <h1 class="text-xl py-3">ジャンル: {genreInWoman}</h1>
       <div
         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
       >
-        {#each data.datas["女性"][genreInWoman] as image, i}
+        {#each data.datas["男性"][genreInWoman] as image, i}
           <div class="card bg-base-100 shadow-xl image-full">
             <figure>
               <img

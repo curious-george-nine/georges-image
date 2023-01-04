@@ -22,9 +22,3 @@
     <slot />
   </div>
 </section>
-
-<div class="toast">
-  <div class="alert alert-warning">
-    <div>テスト中</div>
-  </div>
-</div>
