@@ -49,9 +49,9 @@
         hidden = true;
       }
     };
-  }
 
-  document.body.classList.add("overflow-x-hidden");
+    document.body.classList.add("overflow-x-hidden");
+  }
 </script>
 
 <svelte:window on:scroll={handleOnScroll} />
