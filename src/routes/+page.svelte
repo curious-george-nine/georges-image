@@ -1,4 +1,7 @@
 <script>
+  import ListGrid from "../components/ListGrid.svelte";
+  import ImageCard from "../components/ImageCard.svelte";
+
   async function getData() {
     const res = await fetch("https://georges-image-datas.vercel.app/");
     const data = await res.json();
@@ -18,38 +21,21 @@
   <div class="text-left mt-12">
     <p class="text-2xl">画像リスト 全て</p>
     {#each Object.keys(data.datas) as genre}
-      <h1 class="text-xl py-3">ジャンル: {genre}</h1>
+      <h1 class="text-xl py-3" id={genre}>ジャンル: {genre}</h1>
       {#each Object.keys(data.datas[genre]) as advancedGenre}
-        <h1 class="text-lg py-2">ジャンル: {advancedGenre}</h1>
-        <div
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
-        >
+        <h1 class="text-lg py-2" id={advancedGenre}>
+          ジャンル: {advancedGenre}
+        </h1>
+        <ListGrid>
           {#each data.datas[genre][advancedGenre] as image, i}
-            <div class="card bg-base-100 shadow-xl image-full">
-              <figure>
-                <img
-                  src={image.imageurl}
-                  alt="number {i + 1} in this genre"
-                  class="blur-md"
-                />
-              </figure>
-              <div class="card-body">
-                <h2 class="card-title">{image.title}</h2>
-                <p>{image.desc}</p>
-                <div class="card-actions justify-end">
-                  <a
-                    href={image.imageurl}
-                    target="_blank"
-                    rel="noreferrer"
-                    class="btn btn-primary"
-                  >
-                    拡大
-                  </a>
-                </div>
-              </div>
-            </div>
+            <ImageCard
+              title={image.title}
+              desc={image.desc}
+              url={image.imageurl}
+              index={i}
+            />
           {/each}
-        </div>
+        </ListGrid>
       {/each}
     {/each}
   </div>

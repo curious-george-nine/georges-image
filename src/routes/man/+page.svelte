@@ -1,4 +1,7 @@
 <script>
+  import ListGrid from "../../components/ListGrid.svelte";
+  import ImageCard from "../../components/ImageCard.svelte";
+
   async function getData() {
     const res = await fetch("https://georges-image-datas.vercel.app/");
     const data = await res.json();
@@ -19,35 +22,16 @@
     <p class="text-2xl">画像リスト 男性</p>
     {#each Object.keys(data.datas["男性"]) as genreInWoman}
       <h1 class="text-xl py-3">ジャンル: {genreInWoman}</h1>
-      <div
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
-      >
+      <ListGrid>
         {#each data.datas["男性"][genreInWoman] as image, i}
-          <div class="card bg-base-100 shadow-xl image-full">
-            <figure>
-              <img
-                src={image.imageurl}
-                alt="number {i + 1} in this genre"
-                class="blur-md"
-              />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">{image.title}</h2>
-              <p>{image.desc}</p>
-              <div class="card-actions justify-end">
-                <a
-                  href={image.imageurl}
-                  target="_blank"
-                  rel="noreferrer"
-                  class="btn btn-primary"
-                >
-                  拡大
-                </a>
-              </div>
-            </div>
-          </div>
+          <ImageCard
+            title={image.title}
+            desc={image.desc}
+            url={image.imageurl}
+            index={i}
+          />
         {/each}
-      </div>
+      </ListGrid>
     {/each}
   </div>
 {:catch error}
