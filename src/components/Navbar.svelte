@@ -23,7 +23,7 @@
     <div class="flex-none">
       <a href="/" class="btn btn-ghost">全て</a>
       <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-      <div class="dropdown">
+      <div class="dropdown dropdown-end">
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label tabindex="0" class="btn btn-ghost m-1">女性</label>
@@ -38,7 +38,7 @@
         </ul>
       </div>
       <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-      <div class="dropdown">
+      <div class="dropdown dropdown-end">
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label tabindex="0" class="btn btn-ghost m-1">男性</label>
@@ -55,7 +55,7 @@
     </div>
   </div>
   <div
-    class="md:hidden sticky top-0 left-0 z-50 backdrop-blur-md navbar bg-base-200 bg-opacity-70 px-8"
+    class="md:hidden sticky top-0 left-0 z-50 backdrop-blur-md navbar bg-base-200 bg-opacity-70 pl-8"
   >
     <div class="flex-1">
       <div class="dropdown">
@@ -86,6 +86,7 @@
             <li tabindex="0">
               <span>女性</span>
               <ul class="rounded-box p-2 bg-base-200">
+                <li><a href="/">トップ</a></li>
                 {#each Object.keys(data.datas["女性"]) as genre}
                   <li><a href="#{genre}">{genre}</a></li>
                 {/each}
@@ -95,6 +96,7 @@
             <li tabindex="0">
               <span>男性</span>
               <ul class="rounded-box p-2 bg-base-200">
+                <li><a href="/">トップ</a></li>
                 {#each Object.keys(data.datas["男性"]) as genre}
                   <li><a href="#{genre}">{genre}</a></li>
                 {/each}

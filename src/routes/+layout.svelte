@@ -50,9 +50,10 @@
       }
     };
   }
+
+  document.body.classList.add("overflow-x-hidden");
 </script>
 
-<svelte:body class="overflow-x-hidden" />
 <svelte:window on:scroll={handleOnScroll} />
 
 <div class="absolute top-0 left-0" id="top" />
