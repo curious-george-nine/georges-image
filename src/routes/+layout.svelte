@@ -2,7 +2,6 @@
   import "../app.css";
 
   import Navbar from "../components/Navbar.svelte";
-  import BackToTop from "../components/BackToTop.svelte";
   import Drawer from "../components/Drawer.svelte";
 
   import { onMount } from "svelte";

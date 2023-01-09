@@ -6,6 +6,10 @@
   export let data;
 </script>
 
+<svelte:head>
+  <title>じょーじのえろ画像</title>
+</svelte:head>
+
 <div class="text-left mt-12">
   <p class="text-2xl">画像リスト 全て</p>
   {#each Object.keys(data.data.datas) as genre}
