@@ -31,7 +31,7 @@
   </div>
   <div class="drawer-side">
     <label for="theme-drawer" class="drawer-overlay" />
-    <div class="bg-base-100 w-1/3">
+    <div class="bg-base-100 w-72">
       <Theme {data} />
     </div>
   </div>
