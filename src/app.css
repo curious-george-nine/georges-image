@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.theme-active {
+  @apply bg-success text-success-content;
+}

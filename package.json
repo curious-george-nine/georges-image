@@ -22,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"daisyui": "^2.46.1"
+		"daisyui": "^2.46.1",
+		"theme-change": "^2.2.0"
 	}
 }
