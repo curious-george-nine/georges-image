@@ -1,11 +1,11 @@
 <script>
   /**
-   * @type {{ data: { themes: any; }; }}
+   * @type {{ data: { themes: string[]; }; }}
    */
   export let data;
 </script>
 
-<ul class="menu gap-y-4 bg-base-100">
+<ul class="menu h-full justify-between py-20 bg-base-100">
   {#each data.data.themes as theme}
     <li data-theme={theme}>
       <!-- svelte-ignore a11y-missing-attribute -->

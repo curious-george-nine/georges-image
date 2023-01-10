@@ -23,7 +23,7 @@
   </figure>
   <div class="card-body">
     <h2 class="card-title">{title}</h2>
-    <p>{desc}</p>
+    <p>{@html desc}</p>
     <div class="card-actions justify-end">
       <a href={url} target="_blank" rel="noreferrer" class="btn btn-primary">
         拡大
